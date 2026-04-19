@@ -1,0 +1,28 @@
+export const parseQuery = (query) => {
+  if (!query) return {};
+  const lower = query.toLowerCase();
+  const parsed = {};
+  if (/\b(cheap|budget|affordable|low)\b/.test(lower)) parsed.budget = "Low";
+  else if (/\b(luxury|premium|high|expensive)\b/.test(lower)) parsed.budget = "High";
+  else if (/\b(moderate|medium|mid)\b/.test(lower)) parsed.budget = "Medium";
+  if (/\b(beach|sea|ocean|coast)\b/.test(lower)) parsed.type = "Beach";
+  else if (/\b(mountain|hill|snow|peak)\b/.test(lower)) parsed.type = "Mountain";
+  else if (/\b(heritage|historical|palace|fort)\b/.test(lower)) parsed.type = "Heritage";
+  else if (/\b(nature|forest|green|jungle)\b/.test(lower)) parsed.type = "Nature";
+  else if (/\b(desert|dune|sand)\b/.test(lower)) parsed.type = "Desert";
+  else if (/\b(city|urban|metro)\b/.test(lower)) parsed.type = "City";
+  if (/\b(peaceful|relax|calm|chill)\b/.test(lower)) parsed.mood = "Relax";
+  else if (/\b(adventure|thrill|exciting)\b/.test(lower)) parsed.mood = "Adventure";
+  else if (/\b(romantic|honeymoon|couple)\b/.test(lower)) parsed.mood = "Romantic";
+  else if (/\b(cultural|traditional)\b/.test(lower)) parsed.mood = "Cultural";
+  else if (/\b(luxury|lavish)\b/.test(lower)) parsed.mood = "Luxury";
+  if (/\b(trek|hiking|hike)\b/.test(lower)) parsed.activity = "Trekking";
+  else if (/\b(swim|dive)\b/.test(lower)) parsed.activity = "Swimming";
+  else if (/\b(ski)\b/.test(lower)) parsed.activity = "Skiing";
+  else if (/\b(shop)\b/.test(lower)) parsed.activity = "Shopping";
+  else if (/\b(boat|cruise)\b/.test(lower)) parsed.activity = "Boating";
+  else if (/\b(camp)\b/.test(lower)) parsed.activity = "Camping";
+  else if (/\b(raft)\b/.test(lower)) parsed.activity = "Rafting";
+  else if (/\b(bike|cycle)\b/.test(lower)) parsed.activity = "Biking";
+  return parsed;
+};
