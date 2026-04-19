@@ -36,5 +36,5 @@ A production-grade AI-powered travel planning web application — like MakeMyTri
 
 ---
 
-
-npm install
+HERE IS THE DEMO APP 
+https://travel-ai-app-mu.vercel.app/
